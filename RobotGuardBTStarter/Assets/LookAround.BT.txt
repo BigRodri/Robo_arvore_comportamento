@@ -1,0 +1,9 @@
+tree("Root")
+	Sequence	                         //Segue a sequencia
+		random(5,1,1,1)                  //Randomiza 4 coordenadas
+			Turn(90.0)                   //Segue cordenada de rotação
+			Turn(-90.0)                  //Segue cordenada de rotação
+			Turn(145.5)                  //Segue cordenada de rotação
+			Turn(-27.5)                  //Segue cordenada de rotação
+		LookAtTarget                     //Olha pro target
+		WaitRandom(1.0,5.0)              //Tempo de espera

@@ -1,0 +1,11 @@
+tree("Root")              
+	sequence                                  //Segue a sequencia
+		PickDestination (-100, 55)            //Defini as coordenadas
+		MoveToDestination                     //Vai até a coordenada definida
+		PickDestination (55, -80)             //Defini as coordenadas
+		MoveToDestination                     //Vai até a coordenada definida
+		PickDestination (-80, 10)             //Defini as coordenadas
+		MoveToDestination                     //Vai até a coordenada definida
+		PickDestination (10, -100)            //Defini as coordenadas
+		MoveToDestination                     //Vai até a coordenada definida
+	

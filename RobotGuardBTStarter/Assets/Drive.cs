@@ -1,16 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Drive : MonoBehaviour {
     //Cria variaveis de velocidade e rotação
 	float speed = 20.0F;
     float rotationSpeed = 120.0F;
+    float health = 100.0f;
+
+    public Slider healthBar;
+
     //Reconhece a bala como prefab e spawna varias balas a partir desse prefab
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
 
     void Update() {
+        
         //Controla a movimentação do player
         float translation = Input.GetAxis("Vertical") * speed;
         float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
@@ -18,12 +25,17 @@ public class Drive : MonoBehaviour {
         rotation *= Time.deltaTime;
         transform.Translate(0, 0, translation);
         transform.Rotate(0, rotation, 0);
-
-        //Define a tecla "espaço" para ser a tecla que atira 
-        if(Input.GetKeyDown("space"))
+        
+         //Define a tecla "espaço" para ser a tecla que atira 
+        if (Input.GetKeyDown("space"))
         {
             GameObject bullet = GameObject.Instantiate(bulletPrefab, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
             bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward*2000);
         }
+        
+        Vector3 healthBarPos = Camera.main.WorldToScreenPoint(this.transform.position);
+        healthBar.value = (int)health;
+        healthBar.transform.position = healthBarPos + new Vector3(0, 60, 0);
     }
+
 }

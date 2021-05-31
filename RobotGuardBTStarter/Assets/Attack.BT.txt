@@ -1,0 +1,7 @@
+tree("Root")	
+	while SeePlayer	                         //Olha para o Player
+				Sequence                     //Segue a sequencia
+						TargetPlayer         //Mira no player
+						LookAtTarget         //Olha para o player
+						Fire                 //Atira
+	
