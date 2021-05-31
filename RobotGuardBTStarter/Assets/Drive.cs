@@ -33,9 +33,6 @@ public class Drive : MonoBehaviour {
             bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward*2000);
         }
         
-        Vector3 healthBarPos = Camera.main.WorldToScreenPoint(this.transform.position);
-        healthBar.value = (int)health;
-        healthBar.transform.position = healthBarPos + new Vector3(0, 60, 0);
     }
 
 }

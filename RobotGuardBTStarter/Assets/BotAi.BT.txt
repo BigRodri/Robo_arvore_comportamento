@@ -5,10 +5,10 @@ tree("Root")
 
 tree("Patrol")                                    
     fallback                                    
-        tree("Attack")                           //decisao de atacar
+        tree("Attack")                           //Decisao de atacar
         while IsHealthLessThan(40.0)             //Se a barra de vida estiver menos de 40
-            fallback                             //para de atacar
-                tree("Wander")                   //inicia o Wander
+            fallback                             //Para de atacar
+                tree("Wander")                   //Inicia o Wander
 
 tree("Attack")
     while SeePlayer                              //Se ver o player                           
